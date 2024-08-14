@@ -479,14 +479,17 @@ def main():
     if args.name_format == 2:
         # Create file with filename-to-label connections
         with open(
-            os.path.join(args.output_dir, "labels.txt"), "w", encoding="utf8"
+            os.path.join('/Dataset/train_data/rec/bo2/', "labels9.txt"), "w", encoding="utf8"
         ) as f:
             for i in range(string_count):
-                file_name = str(i) + "." + args.extension
-                label = strings[i]
+                # file_name = '1_' + str(i) + "." + args.extension
+                file_name = '/Dataset/train_data/rec/bo2/9/' + str(i) + "." + args.extension
+                label = strings[i]                
+                # # 阿拉伯语：
+                # label = restrings[i]
                 if args.space_width == 0:
                     label = label.replace(" ", "")
-                f.write("{} {}\n".format(file_name, label))
+                f.write("{}\t{}\n".format(file_name, label))
 
 
 if __name__ == "__main__":
